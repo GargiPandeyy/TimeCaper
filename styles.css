@@ -461,3 +461,28 @@ body {
         transform: translateY(-100px) rotate(360deg);
     }
 }
+
+.story-container::before,
+.quiz-container::before,
+.mission-scene::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: conic-gradient(from 0deg at 50% 50%, #0f0, #000, #0f0);
+    border-radius: inherit;
+    z-index: -1;
+    animation: vortex 4s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes vortex {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

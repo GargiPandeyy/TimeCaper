@@ -196,6 +196,15 @@ function detectAnachronism(mission) {
     }, 500);
 }
 
+function startQuiz(mission) {
+    showScreen('quiz');
+    const quiz = quizData[mission.id];
+    currentEra = mission.id;
+
+    document.getElementById('quiz-result').classList.add('hidden');
+    renderQuizQuestion(quiz);
+}
+
 function init() {
     loadProgress();
     const storyText = document.getElementById('story-text');

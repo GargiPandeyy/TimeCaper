@@ -221,6 +221,22 @@ function renderQuizQuestion(quiz) {
     });
 }
 
+function selectAnswer(selected, correct) {
+    const options = document.querySelectorAll('.quiz-option');
+    options.forEach(opt => opt.disabled = true);
+
+    options[selected].classList.add(selected === correct ? 'correct' : 'incorrect');
+    if (selected !== correct) {
+        options[correct].classList.add('correct');
+    }
+
+    playSound(selected === correct ? 1200 : 400, 0.2);
+
+    setTimeout(() => {
+        showQuizResult(selected === correct);
+    }, 1500);
+}
+
 function init() {
     loadProgress();
     const storyText = document.getElementById('story-text');

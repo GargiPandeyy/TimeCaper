@@ -205,6 +205,22 @@ function startQuiz(mission) {
     renderQuizQuestion(quiz);
 }
 
+function renderQuizQuestion(quiz) {
+    const questionEl = document.getElementById('quiz-question');
+    const optionsEl = document.getElementById('quiz-options');
+
+    questionEl.textContent = quiz.question;
+    optionsEl.innerHTML = '';
+
+    quiz.options.forEach((option, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option';
+        btn.textContent = option;
+        btn.onclick = () => selectAnswer(index, quiz.correct);
+        optionsEl.appendChild(btn);
+    });
+}
+
 function init() {
     loadProgress();
     const storyText = document.getElementById('story-text');

@@ -49,12 +49,23 @@ function playSound(frequency, duration) {
     oscillator.stop(audioContext.currentTime + duration);
 }
 
+function showScreen(screenId) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(screenId + '-screen').classList.add('active');
+    playSound(800, 0.1);
+}
+
 function init() {
     loadProgress();
     const storyText = document.getElementById('story-text');
     typeWriter(storyText, story);
 
     document.addEventListener('click', initAudio, { once: true });
+
+    document.getElementById('start-btn').addEventListener('click', () => {
+        showScreen('hub');
+        renderMissions();
+    });
 }
 
 window.addEventListener('load', init);

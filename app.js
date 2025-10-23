@@ -109,6 +109,8 @@ function selectMission(mission) {
 }
 
 let scannerActive = false;
+let scannerX = 0;
+let scannerY = 0;
 
 function toggleScanner() {
     const scanner = document.getElementById('scanner');
@@ -120,6 +122,19 @@ function toggleScanner() {
     } else {
         scanner.classList.remove('active');
     }
+}
+
+function updateScannerPosition(e) {
+    if (!scannerActive) return;
+
+    const scene = document.getElementById('mission-scene');
+    const rect = scene.getBoundingClientRect();
+    scannerX = e.clientX - rect.left;
+    scannerY = e.clientY - rect.top;
+
+    const scanner = document.getElementById('scanner');
+    scanner.style.left = (scannerX - 40) + 'px';
+    scanner.style.top = (scannerY - 40) + 'px';
 }
 
 function init() {
@@ -154,6 +169,8 @@ function init() {
             toggleScanner();
         }
     });
+
+    document.getElementById('mission-scene').addEventListener('mousemove', updateScannerPosition);
 }
 
 window.addEventListener('load', init);

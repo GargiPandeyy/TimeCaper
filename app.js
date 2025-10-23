@@ -66,6 +66,20 @@ function init() {
         showScreen('hub');
         renderMissions();
     });
+
+    document.querySelectorAll('.nav-btn[data-screen]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const screen = btn.dataset.screen;
+            showScreen(screen);
+            if (screen === 'hub') renderMissions();
+            if (screen === 'trophy') renderTrophies();
+        });
+    });
+
+    document.getElementById('back-btn').addEventListener('click', () => {
+        showScreen('hub');
+        renderMissions();
+    });
 }
 
 window.addEventListener('load', init);

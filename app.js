@@ -135,6 +135,52 @@ function updateScannerPosition(e) {
     const scanner = document.getElementById('scanner');
     scanner.style.left = (scannerX - 40) + 'px';
     scanner.style.top = (scannerY - 40) + 'px';
+
+    checkAnachronismDetection();
+}
+
+function setupMissionScene(mission) {
+    const anachronism = document.getElementById('anachronism');
+    const scene = document.getElementById('mission-scene');
+    const rect = scene.getBoundingClientRect();
+
+    anachronism.style.left = mission.x + '%';
+    anachronism.style.top = mission.y + '%';
+    anachronism.style.display = 'block';
+
+    anachronism.onclick = () => detectAnachronism(mission);
+}
+
+function checkAnachronismDetection() {
+    if (!currentMission || !scannerActive) return;
+
+    const anachronism = document.getElementById('anachronism');
+    const rect = anachronism.getBoundingClientRect();
+    const scene = document.getElementById('mission-scene');
+    const sceneRect = scene.getBoundingClientRect();
+
+    const objX = rect.left - sceneRect.left + rect.width / 2;
+    const objY = rect.top - sceneRect.top + rect.height / 2;
+
+    const distance = Math.sqrt(Math.pow(scannerX - objX, 2) + Math.pow(scannerY - objY, 2));
+
+    if (distance < 50) {
+        anachronism.style.opacity = '1';
+        playSound(1200, 0.05);
+    } else {
+        anachronism.style.opacity = '0.3';
+    }
+}
+
+function detectAnachronism(mission) {
+    playSound(1500, 0.2);
+    document.getElementById('anachronism').style.display = 'none';
+    scannerActive = false;
+    document.getElementById('scanner').classList.remove('active');
+
+    setTimeout(() => {
+        startQuiz(mission);
+    }, 500);
 }
 
 function init() {

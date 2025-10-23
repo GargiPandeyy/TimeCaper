@@ -308,6 +308,10 @@ function renderTrophies() {
     });
 }
 
+function saveProgress() {
+    localStorage.setItem('timecaper-progress', JSON.stringify(gameProgress));
+}
+
 function init() {
     loadProgress();
     const storyText = document.getElementById('story-text');

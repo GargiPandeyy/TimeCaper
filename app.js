@@ -92,6 +92,22 @@ function renderMissions() {
     });
 }
 
+function selectMission(mission) {
+    currentMission = mission;
+    playSound(1000, 0.15);
+    showScreen('mission');
+
+    document.getElementById('mission-title').textContent = mission.name;
+    const info = document.getElementById('mission-info');
+    info.innerHTML = `
+        <p>ERA: ${mission.era}</p>
+        <p>MISSION: Locate the ${mission.anachronism} using your scanner</p>
+        <p>Press SPACE to activate scanner</p>
+    `;
+
+    setupMissionScene(mission);
+}
+
 function init() {
     loadProgress();
     const storyText = document.getElementById('story-text');

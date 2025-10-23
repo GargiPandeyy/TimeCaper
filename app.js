@@ -9,6 +9,19 @@ let gameProgress = {
 
 const story = "ALERT: Timeline fracture detected. Modern objects infiltrating historical eras. Your mission: locate anachronisms, restore timeline integrity. Scan environments carefully. Lock each era with knowledge verification. Time is collapsing. Agent, you're our only hope.";
 
+const missions = [
+    { id: 'ancient-egypt', name: 'Ancient Egypt', era: '3100 BC', anachronism: 'Smartphone', x: 65, y: 40 },
+    { id: 'roman-empire', name: 'Roman Empire', era: '27 BC', anachronism: 'Sunglasses', x: 50, y: 55 },
+    { id: 'medieval-europe', name: 'Medieval Europe', era: '1200 AD', anachronism: 'Laptop', x: 70, y: 30 },
+    { id: 'renaissance', name: 'Renaissance', era: '1500 AD', anachronism: 'Headphones', x: 45, y: 60 },
+    { id: 'industrial-revolution', name: 'Industrial Revolution', era: '1800 AD', anachronism: 'Digital Watch', x: 55, y: 45 },
+    { id: 'wild-west', name: 'Wild West', era: '1880 AD', anachronism: 'Tablet', x: 60, y: 50 },
+    { id: 'victorian-era', name: 'Victorian Era', era: '1890 AD', anachronism: 'Gaming Console', x: 40, y: 35 },
+    { id: 'roaring-twenties', name: 'Roaring Twenties', era: '1920 AD', anachronism: 'Drone', x: 75, y: 55 },
+    { id: 'wwii', name: 'World War II', era: '1940 AD', anachronism: 'USB Drive', x: 50, y: 40 },
+    { id: 'space-race', name: 'Space Race', era: '1960 AD', anachronism: 'Smartwatch', x: 65, y: 50 }
+];
+
 function typeWriter(element, text, speed = 50) {
     let i = 0;
     element.textContent = '';

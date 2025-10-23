@@ -272,3 +272,47 @@ body {
 .quiz-result.hidden {
     display: none;
 }
+
+.trophy-container {
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 60px);
+}
+
+.trophies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.trophy-card {
+    background: rgba(0, 20, 0, 0.8);
+    border: 2px solid #0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+.trophy-card.locked {
+    opacity: 0.3;
+}
+
+.trophy-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.trophy-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.trophy-card p {
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}

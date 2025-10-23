@@ -35,6 +35,19 @@ const quizData = {
     'space-race': { question: 'Who was the first human in space?', options: ['Neil Armstrong', 'Buzz Aldrin', 'Yuri Gagarin', 'John Glenn'], correct: 2 }
 };
 
+const trophyIcons = {
+    'ancient-egypt': '🏺',
+    'roman-empire': '🏛️',
+    'medieval-europe': '🏰',
+    'renaissance': '🎨',
+    'industrial-revolution': '⚙️',
+    'wild-west': '🤠',
+    'victorian-era': '🎩',
+    'roaring-twenties': '🎷',
+    'wwii': '✈️',
+    'space-race': '🚀'
+};
+
 function typeWriter(element, text, speed = 50) {
     let i = 0;
     element.textContent = '';

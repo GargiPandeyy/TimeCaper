@@ -237,6 +237,40 @@ function selectAnswer(selected, correct) {
     }, 1500);
 }
 
+function showQuizResult(isCorrect) {
+    const resultEl = document.getElementById('quiz-result');
+    resultEl.classList.remove('hidden');
+
+    if (isCorrect) {
+        if (!gameProgress.completedMissions.includes(currentEra)) {
+            gameProgress.completedMissions.push(currentEra);
+            gameProgress.trophies.push({
+                id: currentEra,
+                name: missions.find(m => m.id === currentEra).name,
+                date: new Date().toLocaleDateString()
+            });
+            saveProgress();
+        }
+
+        resultEl.innerHTML = `
+            <h3>TIMELINE LOCKED!</h3>
+            <p>Era stabilized. Trophy acquired.</p>
+            <button class="cyber-btn" onclick="returnToHub()">RETURN TO HUB</button>
+        `;
+    } else {
+        resultEl.innerHTML = `
+            <h3>TIMELINE UNSTABLE</h3>
+            <p>Incorrect answer. Try again.</p>
+            <button class="cyber-btn" onclick="returnToHub()">RETURN TO HUB</button>
+        `;
+    }
+}
+
+function returnToHub() {
+    showScreen('hub');
+    renderMissions();
+}
+
 function init() {
     loadProgress();
     const storyText = document.getElementById('story-text');

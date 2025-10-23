@@ -22,6 +22,19 @@ const missions = [
     { id: 'space-race', name: 'Space Race', era: '1960 AD', anachronism: 'Smartwatch', x: 65, y: 50 }
 ];
 
+const quizData = {
+    'ancient-egypt': { question: 'What was the primary writing system in Ancient Egypt?', options: ['Hieroglyphics', 'Cuneiform', 'Latin', 'Sanskrit'], correct: 0 },
+    'roman-empire': { question: 'Who was the first Roman Emperor?', options: ['Julius Caesar', 'Augustus', 'Nero', 'Constantine'], correct: 1 },
+    'medieval-europe': { question: 'What was the feudal system based on?', options: ['Democracy', 'Land ownership and loyalty', 'Maritime trade', 'Industrial production'], correct: 1 },
+    'renaissance': { question: 'Where did the Renaissance begin?', options: ['France', 'England', 'Italy', 'Spain'], correct: 2 },
+    'industrial-revolution': { question: 'Which invention powered the Industrial Revolution?', options: ['Electricity', 'Steam engine', 'Gasoline engine', 'Nuclear power'], correct: 1 },
+    'wild-west': { question: 'What year did the Transcontinental Railroad complete?', options: ['1869', '1875', '1880', '1865'], correct: 0 },
+    'victorian-era': { question: 'Who ruled during the Victorian Era?', options: ['Queen Elizabeth I', 'Queen Victoria', 'King George III', 'Queen Anne'], correct: 1 },
+    'roaring-twenties': { question: 'What amendment prohibited alcohol in the US?', options: ['16th', '17th', '18th', '19th'], correct: 2 },
+    'wwii': { question: 'What year did World War II end?', options: ['1944', '1945', '1946', '1947'], correct: 1 },
+    'space-race': { question: 'Who was the first human in space?', options: ['Neil Armstrong', 'Buzz Aldrin', 'Yuri Gagarin', 'John Glenn'], correct: 2 }
+};
+
 function typeWriter(element, text, speed = 50) {
     let i = 0;
     element.textContent = '';

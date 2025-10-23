@@ -177,3 +177,34 @@ body {
     font-size: 14px;
     line-height: 1.6;
 }
+
+.mission-container {
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 60px);
+}
+
+.mission-scene {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    height: 500px;
+    margin: 20px auto;
+    background: rgba(0, 10, 0, 0.7);
+    border: 2px solid #0f0;
+    overflow: hidden;
+}
+
+.mission-info {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 20, 0, 0.8);
+    border: 1px solid #0f0;
+}
+
+.cyber-btn.small {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}

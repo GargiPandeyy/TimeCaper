@@ -94,10 +94,18 @@ function showScreen(screenId) {
     playSound(800, 0.1);
 }
 
+const companionMessages = [
+    'Temporal anomalies detected across 10 eras. Begin investigation.',
+    'Timeline integrity at risk. Your skills are essential, Agent.',
+    'Each locked timeline brings us closer to stability.',
+    'The fabric of time depends on your success.'
+];
+
 function renderMissions() {
     const grid = document.getElementById('missions-grid');
     const companionMsg = document.getElementById('companion-msg');
-    companionMsg.textContent = 'Select an era to investigate. Scan for anomalies and stabilize the timeline.';
+    const randomMsg = companionMessages[Math.floor(Math.random() * companionMessages.length)];
+    companionMsg.textContent = randomMsg;
 
     grid.innerHTML = '';
     missions.forEach(mission => {

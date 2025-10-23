@@ -68,6 +68,30 @@ function showScreen(screenId) {
     playSound(800, 0.1);
 }
 
+function renderMissions() {
+    const grid = document.getElementById('missions-grid');
+    const companionMsg = document.getElementById('companion-msg');
+    companionMsg.textContent = 'Select an era to investigate. Scan for anomalies and stabilize the timeline.';
+
+    grid.innerHTML = '';
+    missions.forEach(mission => {
+        const card = document.createElement('div');
+        card.className = 'mission-card';
+        if (gameProgress.completedMissions.includes(mission.id)) {
+            card.classList.add('completed');
+        }
+
+        card.innerHTML = `
+            <h3>${mission.name}</h3>
+            <p>${mission.era}</p>
+            <p>Target: ${mission.anachronism}</p>
+        `;
+
+        card.addEventListener('click', () => selectMission(mission));
+        grid.appendChild(card);
+    });
+}
+
 function init() {
     loadProgress();
     const storyText = document.getElementById('story-text');

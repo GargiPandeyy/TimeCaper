@@ -312,6 +312,13 @@ function saveProgress() {
     localStorage.setItem('timecaper-progress', JSON.stringify(gameProgress));
 }
 
+function loadProgress() {
+    const saved = localStorage.getItem('timecaper-progress');
+    if (saved) {
+        gameProgress = JSON.parse(saved);
+    }
+}
+
 function init() {
     loadProgress();
     const storyText = document.getElementById('story-text');

@@ -1,0 +1,8 @@
+{
+  "id": "space-race",
+  "name": "Space Race",
+  "era": "1960 AD",
+  "description": "Race to the stars",
+  "anachronism": "Smartwatch",
+  "facts": ["Yuri Gagarin 1961", "Moon landing 1969", "Cold War competition"]
+}

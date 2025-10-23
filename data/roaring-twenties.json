@@ -1,0 +1,8 @@
+{
+  "id": "roaring-twenties",
+  "name": "Roaring Twenties",
+  "era": "1920 AD",
+  "description": "Jazz age prosperity",
+  "anachronism": "Drone",
+  "facts": ["Jazz music boom", "Prohibition era", "Economic prosperity"]
+}

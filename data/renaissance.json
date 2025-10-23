@@ -1,0 +1,8 @@
+{
+  "id": "renaissance",
+  "name": "Renaissance",
+  "era": "1500 AD",
+  "description": "Rebirth of art and science",
+  "anachronism": "Headphones",
+  "facts": ["Leonardo da Vinci", "Michelangelo sculptures", "Scientific revolution"]
+}

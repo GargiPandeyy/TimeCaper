@@ -1,0 +1,8 @@
+{
+  "id": "industrial-revolution",
+  "name": "Industrial Revolution",
+  "era": "1800 AD",
+  "description": "Steam power transforms society",
+  "anachronism": "Digital Watch",
+  "facts": ["Steam engine invention", "Factory system", "Urbanization boom"]
+}

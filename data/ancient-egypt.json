@@ -1,0 +1,8 @@
+{
+  "id": "ancient-egypt",
+  "name": "Ancient Egypt",
+  "era": "3100 BC",
+  "description": "The land of pyramids and pharaohs",
+  "anachronism": "Smartphone",
+  "facts": ["Pyramids built around 2560 BC", "Hieroglyphics used for writing", "Nile River vital to civilization"]
+}

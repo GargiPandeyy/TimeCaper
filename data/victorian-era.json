@@ -1,0 +1,8 @@
+{
+  "id": "victorian-era",
+  "name": "Victorian Era",
+  "era": "1890 AD",
+  "description": "British golden age",
+  "anachronism": "Gaming Console",
+  "facts": ["Queen Victoria reign", "Industrial prosperity", "Social reforms"]
+}

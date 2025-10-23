@@ -1,0 +1,8 @@
+{
+  "id": "wwii",
+  "name": "World War II",
+  "era": "1940 AD",
+  "description": "Global conflict",
+  "anachronism": "USB Drive",
+  "facts": ["1939-1945", "Allied vs Axis", "Nuclear weapons developed"]
+}

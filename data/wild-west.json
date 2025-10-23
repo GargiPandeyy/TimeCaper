@@ -1,0 +1,8 @@
+{
+  "id": "wild-west",
+  "name": "Wild West",
+  "era": "1880 AD",
+  "description": "American frontier expansion",
+  "anachronism": "Tablet",
+  "facts": ["Gold rush", "Cowboys and outlaws", "Railroad expansion"]
+}

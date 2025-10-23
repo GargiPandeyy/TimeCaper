@@ -1,0 +1,8 @@
+{
+  "id": "roman-empire",
+  "name": "Roman Empire",
+  "era": "27 BC",
+  "description": "The mighty Roman civilization",
+  "anachronism": "Sunglasses",
+  "facts": ["Augustus first emperor", "Latin language", "Colosseum construction"]
+}

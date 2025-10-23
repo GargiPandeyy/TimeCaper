@@ -24,10 +24,18 @@ function typeWriter(element, text, speed = 50) {
     type();
 }
 
+function initAudio() {
+    if (!audioContext) {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    }
+}
+
 function init() {
     loadProgress();
     const storyText = document.getElementById('story-text');
     typeWriter(storyText, story);
+
+    document.addEventListener('click', initAudio, { once: true });
 }
 
 window.addEventListener('load', init);

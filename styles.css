@@ -357,3 +357,51 @@ body {
     border-radius: 50%;
     cursor: pointer;
 }
+
+#parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+}
+
+.layer-1 {
+    background: repeating-linear-gradient(0deg, transparent, transparent 50px, #0f0 50px, #0f0 51px);
+    animation: parallax1 20s linear infinite;
+}
+
+.layer-2 {
+    background: repeating-linear-gradient(90deg, transparent, transparent 50px, #0f0 50px, #0f0 51px);
+    animation: parallax2 25s linear infinite;
+}
+
+.layer-3 {
+    background: radial-gradient(circle at center, #0f0 1px, transparent 1px);
+    background-size: 100px 100px;
+    animation: parallax3 30s linear infinite;
+}
+
+@keyframes parallax1 {
+    from { transform: translateY(0); }
+    to { transform: translateY(100px); }
+}
+
+@keyframes parallax2 {
+    from { transform: translateX(0); }
+    to { transform: translateX(100px); }
+}
+
+@keyframes parallax3 {
+    from { transform: rotate(0deg) scale(1); }
+    to { transform: rotate(360deg) scale(1.1); }
+}

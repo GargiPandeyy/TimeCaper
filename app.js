@@ -361,6 +361,12 @@ function init() {
     });
 
     document.getElementById('mission-scene').addEventListener('mousemove', updateScannerPosition);
+
+    document.getElementById('mute-btn').addEventListener('click', () => {
+        isMuted = !isMuted;
+        document.getElementById('mute-btn').textContent = isMuted ? 'UNMUTE' : 'MUTE';
+        playSound(700, 0.1);
+    });
 }
 
 window.addEventListener('load', init);

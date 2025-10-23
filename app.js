@@ -284,6 +284,30 @@ function returnToHub() {
     renderMissions();
 }
 
+function renderTrophies() {
+    const grid = document.getElementById('trophies-grid');
+    grid.innerHTML = '';
+
+    missions.forEach(mission => {
+        const card = document.createElement('div');
+        card.className = 'trophy-card';
+
+        const trophy = gameProgress.trophies.find(t => t.id === mission.id);
+
+        if (!trophy) {
+            card.classList.add('locked');
+        }
+
+        card.innerHTML = `
+            <div class="trophy-icon">${trophyIcons[mission.id]}</div>
+            <h3>${mission.name}</h3>
+            <p>${trophy ? trophy.date : 'LOCKED'}</p>
+        `;
+
+        grid.appendChild(card);
+    });
+}
+
 function init() {
     loadProgress();
     const storyText = document.getElementById('story-text');

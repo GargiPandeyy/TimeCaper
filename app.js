@@ -108,6 +108,20 @@ function selectMission(mission) {
     setupMissionScene(mission);
 }
 
+let scannerActive = false;
+
+function toggleScanner() {
+    const scanner = document.getElementById('scanner');
+    scannerActive = !scannerActive;
+
+    if (scannerActive) {
+        scanner.classList.add('active');
+        playSound(600, 0.1);
+    } else {
+        scanner.classList.remove('active');
+    }
+}
+
 function init() {
     loadProgress();
     const storyText = document.getElementById('story-text');
@@ -132,6 +146,13 @@ function init() {
     document.getElementById('back-btn').addEventListener('click', () => {
         showScreen('hub');
         renderMissions();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Space') {
+            e.preventDefault();
+            toggleScanner();
+        }
     });
 }
 

@@ -332,7 +332,13 @@ function init() {
     const storyText = document.getElementById('story-text');
     typeWriter(storyText, story);
 
-    document.addEventListener('click', initAudio, { once: true });
+    document.body.addEventListener('click', () => {
+        initAudio();
+    }, { once: true });
+
+    document.body.addEventListener('keydown', () => {
+        initAudio();
+    }, { once: true });
 
     document.getElementById('start-btn').addEventListener('click', () => {
         showScreen('hub');

@@ -116,3 +116,64 @@ body {
     color: #000;
     box-shadow: 0 0 20px #0f0;
 }
+
+.hub-container {
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 60px);
+}
+
+.screen-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px #0f0;
+}
+
+.companion-message {
+    background: rgba(0, 40, 0, 0.8);
+    border: 1px solid #0f0;
+    padding: 15px;
+    margin: 0 auto 30px;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.missions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.mission-card {
+    background: rgba(0, 20, 0, 0.8);
+    border: 2px solid #0f0;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.mission-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #0f0;
+}
+
+.mission-card.completed {
+    border-color: #00ff00;
+    background: rgba(0, 40, 0, 0.9);
+}
+
+.mission-card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.mission-card p {
+    font-size: 14px;
+    line-height: 1.6;
+}

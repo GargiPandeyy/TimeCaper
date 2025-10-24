@@ -130,6 +130,9 @@ function start_mission(mission) {
     play_sound('click');
     update_companion(mission.description);
     
+    // store current mission
+    window.current_mission = mission;
+    
     // show mission screen
     const mission_screen = document.getElementById('mission-screen');
     const mission_title = document.getElementById('mission-title');
@@ -358,9 +361,18 @@ function finish_quiz() {
         update_companion('Timeline stabilized! Anachronism secured. Returning to Hub.');
         play_sound('vortex');
         
-        // add trophy (will implement later)
-        // trophies.push({...});
-        // localStorage.setItem('timeCaperTrophies', JSON.stringify(trophies));
+        // add trophy to storage
+        const trophies = JSON.parse(localStorage.getItem('timeCaperTrophies')) || [];
+        const current_mission = window.current_mission;
+        
+        if (current_mission) {
+            trophies.push({
+                id: current_mission.id,
+                name: current_mission.artifactName,
+                icon: current_mission.artifactIcon
+            });
+            localStorage.setItem('timeCaperTrophies', JSON.stringify(trophies));
+        }
     } else {
         update_companion('Timeline lock failed! Anomaly remains. Returning to Time Hub.');
         play_sound('incorrect');
@@ -369,6 +381,14 @@ function finish_quiz() {
     // return to hub
     const hub_mode = document.getElementById('main-hub');
     show_mode(hub_mode);
+    
+    // reload missions to show completed status
+    load_missions().then(missions => {
+        if (missions) {
+            const trophies = JSON.parse(localStorage.getItem('timeCaperTrophies')) || [];
+            render_missions(missions, trophies);
+        }
+    });
 }
 
 // initialize the game

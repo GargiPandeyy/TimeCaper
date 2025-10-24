@@ -98,6 +98,23 @@ function init_audio() {
     }
 }
 
+// setup mute button
+function setup_mute_button() {
+    const mute_btn = document.getElementById('muteBtn');
+    window.is_muted = false;
+    
+    mute_btn.addEventListener('click', () => {
+        window.is_muted = !window.is_muted;
+        mute_btn.textContent = window.is_muted ? '🔇 Sound' : '🔊 Sound';
+        
+        if (!window.is_muted && !window.audio_ctx) {
+            init_audio();
+        }
+        
+        play_sound('click');
+    });
+}
+
 // show screen function
 function show_screen(screen) {
     // hide all screens
@@ -504,5 +521,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         setup_nav();
+        setup_mute_button();
     });
 });

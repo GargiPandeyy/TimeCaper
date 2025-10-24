@@ -31,18 +31,40 @@ function type_effect(element, text, on_complete) {
     typing();
 }
 
-// typing cursor animation
-.typing-cursor {
-    display: inline-block;
-    width: 10px;
-    height: 1.2em;
-    background: var(--glow);
-    margin-left: 5px;
-    animation: blink 0.7s infinite;
+// simple sound function (placeholder for now)
+function play_sound(type) {
+    // will add real sound later
+    console.log('playing sound:', type);
 }
 
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+// show screen function
+function show_screen(screen) {
+    // hide all screens
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    // show selected screen
+    screen.classList.add('active');
 }
+
+// initialize the game
+document.addEventListener('DOMContentLoaded', () => {
+    // get story elements
+    const story_text = document.getElementById('story-text-1');
+    const start_btn = document.getElementById('start-btn');
+    const story_screen = document.getElementById('story-screen');
+    const main_app = document.getElementById('main-app');
+    
+    // story text to display
+    const story = "Agent, you're online. A temporal crisis is unfolding. Unknown anachronisms are appearing across the timeline, threatening to unravel reality. Your mission: find these artifacts and retrieve them before the timeline destabilizes. Access the Time Hub to see active hotspots.";
+    
+    // start typing effect
+    type_effect(story_text, story, () => {
+        // show start button when typing is done
+        start_btn.style.display = 'block';
+    });
+    
+    // start button click handler
+    start_btn.addEventListener('click', () => {
+        play_sound('click');
+        show_screen(main_app);
+    });
+});

@@ -243,6 +243,72 @@ function trigger_vortex_animation(x, y) {
     }
 }
 
+// load quiz from json file
+async function load_quiz(quiz_file) {
+    try {
+        const response = await fetch(quiz_file);
+        if (!response.ok) throw new Error('failed to load quiz');
+        const quiz = await response.json();
+        
+        if (!quiz || quiz.length === 0) {
+            console.error('quiz is empty:', quiz_file);
+            update_companion('error: could not load temporal lock data');
+            return;
+        }
+        
+        // start quiz
+        start_quiz(quiz);
+    } catch (error) {
+        console.error('error loading quiz:', error);
+        update_companion('error: could not load temporal lock data');
+    }
+}
+
+// start quiz
+function start_quiz(quiz) {
+    // reset quiz state
+    window.current_question = 0;
+    window.quiz_score = 0;
+    window.quiz_data = quiz;
+    
+    // update score display
+    const quiz_score = document.getElementById('quizScore');
+    const quiz_total = document.getElementById('quizTotal');
+    quiz_score.textContent = window.quiz_score;
+    quiz_total.textContent = quiz.length;
+    
+    // show quiz mode
+    const quiz_mode = document.getElementById('quiz-mode');
+    show_mode(quiz_mode);
+    
+    // display first question
+    display_question();
+}
+
+// display current question
+function display_question() {
+    const question_text = document.getElementById('questionText');
+    const quiz_options = document.getElementById('quizOptions');
+    const next_btn = document.getElementById('next-question');
+    
+    const question = window.quiz_data[window.current_question];
+    question_text.textContent = question.question;
+    quiz_options.innerHTML = '';
+    next_btn.style.display = 'none';
+    
+    // shuffle options
+    const shuffled_options = [...question.options].sort(() => Math.random() - 0.5);
+    
+    // create option buttons
+    shuffled_options.forEach(option => {
+        const button = document.createElement('button');
+        button.className = 'btn quiz-option';
+        button.textContent = option;
+        button.addEventListener('click', () => select_answer(option, question.correctAnswer));
+        quiz_options.appendChild(button);
+    });
+}
+
 // initialize the game
 document.addEventListener('DOMContentLoaded', () => {
     // get story elements

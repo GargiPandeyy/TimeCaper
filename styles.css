@@ -542,3 +542,28 @@ main {
     text-align: right; 
     margin-top: 20px; 
 }
+
+/* trophy room styles */
+#trophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.trophy-card {
+    background: rgba(0, 17, 0, 0.9);
+    color: var(--text-light);
+    border: 4px solid var(--brass);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.trophy-card h3 { 
+    font-size: 3em; 
+}
+
+.trophy-card p { 
+    font-size: 1.2em; 
+    font-weight: bold; 
+}

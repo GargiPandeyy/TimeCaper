@@ -674,3 +674,46 @@ main {
     font-size: 1.2em; 
     font-weight: bold; 
 }
+
+/* responsive design */
+@media (max-width: 768px) {
+    #mission-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        max-width: 600px;
+    }
+    
+    .story-content {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+    
+    .quiz-container {
+        padding: 20px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #mission-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        max-width: 300px;
+    }
+    
+    .story-content h1 {
+        font-size: 2em;
+    }
+    
+    .story-text-container {
+        font-size: 1em;
+    }
+    
+    .companion-avatar {
+        font-size: 2rem;
+    }
+    
+    .companion-bubble {
+        font-size: 1em;
+    }
+}

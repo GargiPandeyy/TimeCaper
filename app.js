@@ -531,6 +531,73 @@ function create_flying_clocks() {
     }, Math.random() * 2000 + 4000);
 }
 
+// create matrix effect
+function create_matrix_effect() {
+    const container = document.getElementById('matrix-container');
+    if (!container) return;
+    
+    const matrix_chars = [
+        'ア', 'イ', 'ウ', 'エ', 'オ', 'カ', 'キ', 'ク', 'ケ', 'コ',
+        'サ', 'シ', 'ス', 'セ', 'ソ', 'タ', 'チ', 'ツ', 'テ', 'ト',
+        'ナ', 'ニ', 'ヌ', 'ネ', 'ノ', 'ハ', 'ヒ', 'フ', 'ヘ', 'ホ',
+        'マ', 'ミ', 'ム', 'メ', 'モ', 'ヤ', 'ユ', 'ヨ', 'ラ', 'リ',
+        'ル', 'レ', 'ロ', 'ワ', 'ヲ', 'ン', '0', '1', '2', '3',
+        '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D',
+        'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
+        'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
+        'Y', 'Z', '!', '@', '#', '$', '%', '^', '&', '*',
+        '(', ')', '-', '_', '=', '+', '[', ']', '{', '}',
+        '|', '\\', ':', ';', '"', "'", '<', '>', ',', '.',
+        '?', '/', '~', '`'
+    ];
+    
+    function create_matrix_column() {
+        const column = document.createElement('div');
+        column.className = 'matrix-column';
+        
+        const x_position = Math.random() * 100;
+        column.style.left = `${x_position}%`;
+        
+        const duration = Math.random() * 4 + 2;
+        column.style.animationDuration = `${duration}s`;
+        
+        const char_count = Math.floor(Math.random() * 31) + 30;
+        
+        for (let i = 0; i < char_count; i++) {
+            const char = document.createElement('div');
+            char.className = 'matrix-character';
+            char.textContent = matrix_chars[Math.floor(Math.random() * matrix_chars.length)];
+            
+            if (Math.random() < 0.15) {
+                char.classList.add('highlight');
+            }
+            
+            column.appendChild(char);
+        }
+        
+        container.appendChild(column);
+        
+        setTimeout(() => {
+            if (column.parentNode) {
+                column.parentNode.removeChild(column);
+            }
+        }, duration * 1000);
+    }
+    
+    // create initial columns
+    for (let i = 0; i < 50; i++) {
+        setTimeout(() => create_matrix_column(), i * 100);
+    }
+    
+    // create columns periodically
+    setInterval(() => {
+        const columns_to_create = Math.floor(Math.random() * 3) + 2;
+        for (let i = 0; i < columns_to_create; i++) {
+            setTimeout(() => create_matrix_column(), i * 50);
+        }
+    }, Math.random() * 150 + 50);
+}
+
 // initialize the game
 document.addEventListener('DOMContentLoaded', () => {
     // get story elements
@@ -564,5 +631,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setup_nav();
         setup_mute_button();
         create_flying_clocks();
+        create_matrix_effect();
     });
 });

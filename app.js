@@ -31,10 +31,62 @@ function type_effect(element, text, on_complete) {
     typing();
 }
 
-// simple sound function (placeholder for now)
+// play sound effects
 function play_sound(type) {
-    // will add real sound later
-    console.log('playing sound:', type);
+    if (!window.audio_ctx || window.is_muted) return;
+    
+    let freq, duration, gain_val, wave_type;
+    
+    switch (type) {
+        case 'click':
+            freq = 2500; duration = 0.05; gain_val = 0.1; wave_type = 'triangle';
+            break;
+        case 'correct':
+            freq = 800; duration = 0.1; gain_val = 0.2; wave_type = 'sine';
+            break;
+        case 'incorrect':
+            freq = 200; duration = 0.2; gain_val = 0.2; wave_type = 'square';
+            break;
+        case 'vortex':
+            freq = 100; duration = 1.0; gain_val = 0.5; wave_type = 'sawtooth';
+            break;
+        case 'beep-high':
+            freq = 2000; duration = 0.05; gain_val = 0.05; wave_type = 'sine';
+            break;
+        case 'beep-low':
+            freq = 1000; duration = 0.05; gain_val = 0.05; wave_type = 'sine';
+            break;
+        default: return;
+    }
+    
+    // create oscillator
+    const oscillator = window.audio_ctx.createOscillator();
+    const gain_node = window.audio_ctx.createGain();
+    oscillator.connect(gain_node);
+    gain_node.connect(window.audio_ctx.destination);
+    
+    oscillator.type = wave_type;
+    oscillator.frequency.setValueAtTime(freq, window.audio_ctx.currentTime);
+    gain_node.gain.setValueAtTime(gain_val, window.audio_ctx.currentTime);
+    gain_node.gain.exponentialRampToValueAtTime(0.001, window.audio_ctx.currentTime + duration);
+    
+    oscillator.start(window.audio_ctx.currentTime);
+    oscillator.stop(window.audio_ctx.currentTime + duration);
+    
+    // add second tone for correct answer
+    if (type === 'correct') {
+        const osc2 = window.audio_ctx.createOscillator();
+        osc2.connect(gain_node);
+        osc2.type = 'sine';
+        osc2.frequency.setValueAtTime(1200, window.audio_ctx.currentTime);
+        osc2.start(window.audio_ctx.currentTime);
+        osc2.stop(window.audio_ctx.currentTime + duration);
+    }
+    
+    // add frequency sweep for vortex
+    if (type === 'vortex') {
+        oscillator.frequency.exponentialRampToValueAtTime(800, window.audio_ctx.currentTime + duration);
+    }
 }
 
 // initialize audio context

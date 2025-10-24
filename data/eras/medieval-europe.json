@@ -1,8 +1,22 @@
-// Medieval Europe era data
 [
-  {
-    "question": "What was the social and economic system that dominated medieval Europe?",
-    "correctAnswer": "Feudalism",
-    "options": ["Capitalism", "Socialism", "Feudalism", "Monarchy"]
-  }
-]
+    {
+      "question": "What was the social and economic system that dominated medieval Europe?",
+      "correctAnswer": "Feudalism",
+      "options": ["Capitalism", "Socialism", "Feudalism", "Monarchy"]
+    },
+    {
+      "question": "Which institution held the most power in medieval Europe?",
+      "correctAnswer": "The Catholic Church",
+      "options": ["The King", "The Catholic Church", "The Nobles", "The Merchants"]
+    },
+    {
+      "question": "What was the name of the series of religious wars fought between Christians and Muslims?",
+      "correctAnswer": "Crusades",
+      "options": ["Reconquista", "Crusades", "Hundred Years' War", "War of the Roses"]
+    },
+    {
+      "question": "Which plague devastated Europe in the 14th century, killing millions?",
+      "correctAnswer": "Black Death",
+      "options": ["Smallpox", "Black Death", "Cholera", "Yellow Fever"]
+    }
+  ]

@@ -1,8 +1,22 @@
-// Wild West era data
 [
-  {
-    "question": "What event in 1848 led to a massive migration to California?",
-    "correctAnswer": "The Gold Rush",
-    "options": ["The Civil War", "The Gold Rush", "The Louisiana Purchase", "The Oregon Trail"]
-  }
-]
+    {
+      "question": "What event in 1848 led to a massive migration to California?",
+      "correctAnswer": "The Gold Rush",
+      "options": ["The Civil War", "The Gold Rush", "The Louisiana Purchase", "The Oregon Trail"]
+    },
+    {
+      "question": "What was the term for a man who herded cattle?",
+      "correctAnswer": "Cowboy",
+      "options": ["Sheriff", "Outlaw", "Cowboy", "Rancher"]
+    },
+    {
+      "question": "Which famous battle, also known as 'Custer's Last Stand', took place in 1876?",
+      "correctAnswer": "Battle of the Little Bighorn",
+      "options": ["The Alamo", "Battle of Gettysburg", "Battle of the Little BH_r", "Gunfight at the O.K. Corral"]
+    },
+    {
+      "question": "What invention by Samuel Colt became famous as 'the gun that won the West'?",
+      "correctAnswer": "The Revolver",
+      "options": ["The Rifle", "The Revolver", "The Shotgun", "The Cannon"]
+    }
+  ]

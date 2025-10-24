@@ -1,8 +1,22 @@
-// Ancient Egypt era data
 [
-  {
-    "question": "What was the title of the ruler in Ancient Egypt?",
-    "correctAnswer": "Pharaoh",
-    "options": ["King", "Pharaoh", "Emperor", "Sultan"]
-  }
-]
+    {
+      "question": "What was the title of the ruler in Ancient Egypt?",
+      "correctAnswer": "Pharaoh",
+      "options": ["King", "Pharaoh", "Emperor", "Sultan"]
+    },
+    {
+      "question": "What is the name of the formal writing system used in Ancient Egypt?",
+      "correctAnswer": "Hieroglyphs",
+      "options": ["Cuneiform", "Alphabet", "Hieroglyphs", "Runes"]
+    },
+    {
+      "question": "Which river was central to life in Ancient Egypt?",
+      "correctAnswer": "The Nile",
+      "options": ["The Amazon", "The Tigris", "The Nile", "The Danube"]
+    },
+    {
+      "question": "What process was used to preserve bodies for the afterlife?",
+      "correctAnswer": "Mummification",
+      "options": ["Mummification", "Burial", "Cremation", "Embalming"]
+    }
+  ]

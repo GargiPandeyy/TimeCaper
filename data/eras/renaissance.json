@@ -1,8 +1,22 @@
-// Renaissance era data
 [
-  {
-    "question": "Which city was the center of the Renaissance?",
-    "correctAnswer": "Florence",
-    "options": ["Rome", "Florence", "Venice", "Milan"]
-  }
-]
+    {
+      "question": "The Renaissance was a 'rebirth' of interest in the art and culture of which ancient civilizations?",
+      "correctAnswer": "Greece and Rome",
+      "options": ["Egypt and Persia", "Greece and Rome", "India and China", "The Vikings"]
+    },
+    {
+      "question": "Which family was a famous patron of the arts in Florence?",
+      "correctAnswer": "The Medici",
+      "options": ["The Borgia", "The Sforza", "The Medici", "The Pazzi"]
+    },
+    {
+      "question": "Who painted the ceiling of the Sistine Chapel?",
+      "correctAnswer": "Michelangelo",
+      "options": ["Leonardo da Vinci", "Raphael", "Donatello", "Michelangelo"]
+    },
+    {
+      "question": "Who is known as the ideal 'Renaissance Man'?",
+      "correctAnswer": "Leonardo da Vinci",
+      "options": ["Leonardo da Vinci", "Galileo Galilei", "Machiavelli", "Dante Alighieri"]
+    }
+  ]

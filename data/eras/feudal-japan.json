@@ -1,8 +1,23 @@
-// Feudal Japan era data
 [
-  {
-    "question": "What was the title of the military dictator of Japan during this era?",
-    "correctAnswer": "Shogun",
-    "options": ["Emperor", "Daimyo", "Shogun", "Samurai"]
-  }
-]
+    {
+      "question": "What was the title of the military dictator of Japan during this era?",
+      "correctAnswer": "Shogun",
+      "options": ["Emperor", "Daimyo", "Shogun", "Samurai"]
+    },
+    {
+      "question": "Which class of warriors were bound by the code of 'bushido'?",
+      "correctAnswer": "Samurai",
+      "options": ["Ninja", "Samurai", "Ashigaru", "Ronin"]
+    },
+    {
+      "question": "What is the term for a masterless samurai?",
+      "correctAnswer": "Ronin",
+      "options": ["Ronin", "Daimyo", "Geisha", "Sensei"]
+    },
+    {
+      "question": "Which city, modern-day Tokyo, became the capital during the Tokugawa Shogunate?",
+      "correctAnswer": "Edo",
+      "options": ["Kyoto", "Osaka", "Nara", "Edo"]
+    }
+  ]
+  

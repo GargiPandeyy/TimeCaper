@@ -27,3 +27,31 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 }
+
+/* main app container */
+#main-app {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* header styles */
+header {
+    background: var(--terminal-bg);
+    padding: 10px 20px;
+    border-bottom: 2px solid var(--glow);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* navigation styles */
+nav {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* main content area */
+main {
+    padding: 20px;
+}

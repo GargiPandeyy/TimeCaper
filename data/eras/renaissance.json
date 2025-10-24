@@ -1,0 +1,8 @@
+// Renaissance era data
+[
+  {
+    "question": "Which city was the center of the Renaissance?",
+    "correctAnswer": "Florence",
+    "options": ["Rome", "Florence", "Venice", "Milan"]
+  }
+]

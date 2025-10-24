@@ -1,0 +1,22 @@
+[
+    {
+      "question": "Which European country established the first permanent English settlement in North America?",
+      "correctAnswer": "England",
+      "options": ["Spain", "France", "England", "Netherlands"]
+    },
+    {
+      "question": "What was the name of the ship that brought the Pilgrims to America in 1620?",
+      "correctAnswer": "Mayflower",
+      "options": ["Santa Maria", "Mayflower", "Endeavour", "Discovery"]
+    },
+    {
+      "question": "Which event in 1773 was a protest against British taxation policies?",
+      "correctAnswer": "Boston Tea Party",
+      "options": ["Boston Massacre", "Boston Tea Party", "Stamp Act", "Intolerable Acts"]
+    },
+    {
+      "question": "What was the name of the first permanent English settlement in America, established in 1607?",
+      "correctAnswer": "Jamestown",
+      "options": ["Plymouth", "Jamestown", "Roanoke", "St. Augustine"]
+    }
+  ]

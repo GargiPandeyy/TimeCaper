@@ -1,0 +1,22 @@
+[
+    {
+      "question": "What was the name of the city-state that was the birthplace of democracy?",
+      "correctAnswer": "Athens",
+      "options": ["Sparta", "Athens", "Corinth", "Thebes"]
+    },
+    {
+      "question": "Which Greek philosopher was sentenced to death for corrupting the youth?",
+      "correctAnswer": "Socrates",
+      "options": ["Plato", "Aristotle", "Socrates", "Pythagoras"]
+    },
+    {
+      "question": "What was the name of the war between Athens and Sparta that lasted 27 years?",
+      "correctAnswer": "Peloponnesian War",
+      "options": ["Trojan War", "Persian Wars", "Peloponnesian War", "Macedonian Wars"]
+    },
+    {
+      "question": "Which Greek god was the king of all gods and ruler of Mount Olympus?",
+      "correctAnswer": "Zeus",
+      "options": ["Poseidon", "Hades", "Zeus", "Apollo"]
+    }
+  ]

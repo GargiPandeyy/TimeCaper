@@ -1,0 +1,22 @@
+[
+    {
+      "question": "What were the Viking warriors who raided and explored called?",
+      "correctAnswer": "Berserkers",
+      "options": ["Knights", "Berserkers", "Samurai", "Gladiators"]
+    },
+    {
+      "question": "Which Viking explorer is believed to have reached North America around 1000 AD?",
+      "correctAnswer": "Leif Erikson",
+      "options": ["Erik the Red", "Leif Erikson", "Ragnar Lothbrok", "Bjorn Ironside"]
+    },
+    {
+      "question": "What was the name of the Viking ships used for raiding and exploration?",
+      "correctAnswer": "Longships",
+      "options": ["Galleys", "Longships", "Caravels", "Galleons"]
+    },
+    {
+      "question": "Which Norse god was the king of all gods and associated with thunder?",
+      "correctAnswer": "Thor",
+      "options": ["Odin", "Thor", "Loki", "Freyr"]
+    }
+  ]

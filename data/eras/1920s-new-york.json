@@ -1,0 +1,8 @@
+// 1920s New York era data
+[
+  {
+    "question": "What was the name for the period of nationwide ban on the sale and production of alcohol?",
+    "correctAnswer": "Prohibition",
+    "options": ["The Great Depression", "Prohibition", "The Jazz Age", "The Boom"]
+  }
+]

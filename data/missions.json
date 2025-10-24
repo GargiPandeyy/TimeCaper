@@ -1,0 +1,8 @@
+// Mission data structure
+[
+  {
+    "id": "ancient-egypt",
+    "title": "Ancient Egypt",
+    "description": "Find the anachronism in ancient Egypt"
+  }
+]

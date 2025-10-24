@@ -1,0 +1,8 @@
+// Wild West era data
+[
+  {
+    "question": "What event in 1848 led to a massive migration to California?",
+    "correctAnswer": "The Gold Rush",
+    "options": ["The Civil War", "The Gold Rush", "The Louisiana Purchase", "The Oregon Trail"]
+  }
+]

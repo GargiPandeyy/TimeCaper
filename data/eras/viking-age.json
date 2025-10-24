@@ -1,0 +1,8 @@
+// Viking Age era data
+[
+  {
+    "question": "What was the name of the Norse god of thunder?",
+    "correctAnswer": "Thor",
+    "options": ["Odin", "Thor", "Loki", "Freyr"]
+  }
+]

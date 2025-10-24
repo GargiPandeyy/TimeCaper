@@ -1,0 +1,8 @@
+// Industrial Revolution era data
+[
+  {
+    "question": "Which country is considered the birthplace of the Industrial Revolution?",
+    "correctAnswer": "England",
+    "options": ["France", "Germany", "England", "United States"]
+  }
+]

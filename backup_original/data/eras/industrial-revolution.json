@@ -1,0 +1,22 @@
+[
+    {
+      "question": "Which country is considered the birthplace of the Industrial Revolution?",
+      "correctAnswer": "England",
+      "options": ["France", "Germany", "England", "United States"]
+    },
+    {
+      "question": "What invention by James Watt revolutionized manufacturing and transportation?",
+      "correctAnswer": "Steam Engine",
+      "options": ["Cotton Gin", "Steam Engine", "Spinning Jenny", "Power Loom"]
+    },
+    {
+      "question": "What was the primary source of power for early factories during the Industrial Revolution?",
+      "correctAnswer": "Water",
+      "options": ["Coal", "Water", "Wind", "Electricity"]
+    },
+    {
+      "question": "Which industry was the first to be mechanized during the Industrial Revolution?",
+      "correctAnswer": "Textile",
+      "options": ["Steel", "Textile", "Mining", "Agriculture"]
+    }
+  ]

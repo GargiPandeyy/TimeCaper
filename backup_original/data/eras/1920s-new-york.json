@@ -1,0 +1,23 @@
+[
+    {
+      "question": "What was the name for the period of nationwide ban on the sale and production of alcohol?",
+      "correctAnswer": "Prohibition",
+      "options": ["The Great Depression", "Prohibition", "The Jazz Age", "The Boom"]
+    },
+    {
+      "question": "What was the name for a fashionable young woman in the 1920s known for her unconventional style and behavior?",
+      "correctAnswer": "Flapper",
+      "options": ["Flapper", "Suffragette", "Debutante", "Socialite"]
+    },
+    {
+      "question": "Which famous literary work by F. Scott Fitzgerald captured the spirit of the Roaring Twenties?",
+      "correctAnswer": "The Great Gatsby",
+      "options": ["The Sun Also Rises", "The Great Gatsby", "A Farewell to Arms", "Ulysses"]
+    },
+    {
+      "question": "What form of music, originating in African American communities, became wildly popular during this decade?",
+      "correctAnswer": "Jazz",
+      "options": ["Blues", "Ragtime", "Jazz", "Swing"]
+    }
+  ]
+  

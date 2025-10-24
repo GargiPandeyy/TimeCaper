@@ -1,0 +1,8 @@
+// Medieval Europe era data
+[
+  {
+    "question": "What was the social and economic system that dominated medieval Europe?",
+    "correctAnswer": "Feudalism",
+    "options": ["Capitalism", "Socialism", "Feudalism", "Monarchy"]
+  }
+]

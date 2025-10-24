@@ -1,0 +1,8 @@
+// Colonial America era data
+[
+  {
+    "question": "Which European country established the first permanent English settlement in North America?",
+    "correctAnswer": "England",
+    "options": ["Spain", "France", "England", "Netherlands"]
+  }
+]

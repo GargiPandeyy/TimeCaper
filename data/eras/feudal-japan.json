@@ -1,0 +1,8 @@
+// Feudal Japan era data
+[
+  {
+    "question": "What was the title of the military dictator of Japan during this era?",
+    "correctAnswer": "Shogun",
+    "options": ["Emperor", "Daimyo", "Shogun", "Samurai"]
+  }
+]

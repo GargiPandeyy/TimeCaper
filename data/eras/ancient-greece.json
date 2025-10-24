@@ -1,0 +1,8 @@
+// Ancient Greece era data
+[
+  {
+    "question": "What was the name of the city-state that was the birthplace of democracy?",
+    "correctAnswer": "Athens",
+    "options": ["Sparta", "Athens", "Corinth", "Thebes"]
+  }
+]

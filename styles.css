@@ -88,6 +88,24 @@ main {
     background-size: 50px 50px;
 }
 
+/* parallax animations */
+@keyframes pan {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+}
+
+#parallax-bg-back {
+    animation: pan 180s linear infinite;
+}
+
+#parallax-bg-mid {
+    animation: pan 120s linear infinite;
+}
+
+#parallax-bg-front {
+    animation: pan 60s linear infinite;
+}
+
 /* screen system */
 .screen {
     width: 100%;

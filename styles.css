@@ -143,7 +143,7 @@ main {
 /* terminal effect */
 .terminal-effect {
     box-shadow: 0 0 30px var(--glow), inset 0 0 15px var(--glow);
-    animation: flicker 3s linear infinite;
+    animation: flicker 3s linear infinite, glitch-jitter 8s linear 4s infinite alternate;
     position: relative;
     overflow: hidden;
 }
@@ -157,6 +157,30 @@ main {
     height: 4px;
     background: linear-gradient(90deg, transparent, var(--glow), transparent);
     animation: scan 4s linear infinite;
+}
+
+/* glitch effects */
+@keyframes glitch-jitter {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(2px, -1px); }
+    50% { transform: translate(-1px, 1px); }
+    75% { transform: translate(1px, -2px); }
+}
+
+@keyframes glitch-color {
+    0%, 100% { text-shadow: none; }
+    33% { text-shadow: -2px 0 var(--glow-secondary), 2px 0 var(--glow); }
+    66% { text-shadow: -1px 0 var(--glow-secondary), 1px 0 var(--glow); }
+}
+
+.terminal-effect h1,
+.terminal-effect h2,
+.terminal-effect p,
+.terminal-effect .btn,
+.terminal-effect .companion-bubble,
+.terminal-effect .mission-card h3,
+.terminal-effect .trophy-card p {
+    animation: glitch-color 10s linear 5s infinite alternate;
 }
 
 /* tva logo */

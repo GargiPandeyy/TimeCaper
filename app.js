@@ -37,6 +37,15 @@ function play_sound(type) {
     console.log('playing sound:', type);
 }
 
+// initialize audio context
+function init_audio() {
+    try {
+        window.audio_ctx = new (window.AudioContext || window.webkitAudioContext)();
+    } catch (e) {
+        console.warn('web audio api not supported');
+    }
+}
+
 // show screen function
 function show_screen(screen) {
     // hide all screens

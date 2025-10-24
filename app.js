@@ -531,7 +531,7 @@ function create_flying_clocks() {
     }, Math.random() * 2000 + 4000);
 }
 
-// create matrix effect
+// create matrix effect(used ai)
 function create_matrix_effect() {
     const container = document.getElementById('matrix-container');
     if (!container) return;

@@ -102,6 +102,36 @@ async function load_missions() {
     }
 }
 
+// render missions in the grid
+function render_missions(missions, trophies) {
+    const mission_grid = document.getElementById('mission-grid');
+    mission_grid.innerHTML = '';
+    
+    missions.forEach(mission => {
+        const card = document.createElement('div');
+        card.className = 'mission-card';
+        card.innerHTML = `<h3>${mission.title}</h3>`;
+        
+        // check if mission is completed
+        if (trophies.find(t => t.id === mission.id)) {
+            card.classList.add('completed');
+            card.innerHTML += `<p><strong>[ SECURED ]</strong></p>`;
+        } else {
+            // add click handler for incomplete missions
+            card.addEventListener('click', () => start_mission(mission));
+        }
+        
+        mission_grid.appendChild(card);
+    });
+}
+
+// start a mission
+function start_mission(mission) {
+    play_sound('click');
+    update_companion(mission.description);
+    // will add more mission logic later
+}
+
 // initialize the game
 document.addEventListener('DOMContentLoaded', () => {
     // get story elements
@@ -120,8 +150,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // start button click handler
-    start_btn.addEventListener('click', () => {
+    start_btn.addEventListener('click', async () => {
         play_sound('click');
         show_screen(main_app);
+        
+        // load missions and setup navigation
+        const missions = await load_missions();
+        const trophies = JSON.parse(localStorage.getItem('timeCaperTrophies')) || [];
+        
+        if (missions) {
+            render_missions(missions, trophies);
+        }
+        
+        setup_nav();
     });
 });

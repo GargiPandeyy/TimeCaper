@@ -45,6 +45,14 @@ function show_screen(screen) {
     screen.classList.add('active');
 }
 
+// show mode function
+function show_mode(mode) {
+    // hide all modes
+    document.querySelectorAll('.app-mode').forEach(m => m.classList.remove('active'));
+    // show selected mode
+    mode.classList.add('active');
+}
+
 // initialize the game
 document.addEventListener('DOMContentLoaded', () => {
     // get story elements

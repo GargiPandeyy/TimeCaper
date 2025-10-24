@@ -219,3 +219,40 @@ main {
     50% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+/* button styles */
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid var(--brass);
+    background: transparent;
+    color: var(--brass);
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--brass);
+    color: var(--text-dark);
+    box-shadow: 0 0 15px var(--brass);
+    transform: translateY(-2px);
+}
+
+/* app mode styles */
+.app-mode {
+    display: none;
+    padding: 20px;
+    width: 100%;
+}
+
+.app-mode.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

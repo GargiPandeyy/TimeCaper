@@ -82,6 +82,12 @@ function setup_nav() {
     });
 }
 
+// update companion message
+function update_companion(text) {
+    const companion_bubble = document.getElementById('companionBubble');
+    companion_bubble.textContent = text;
+}
+
 // initialize the game
 document.addEventListener('DOMContentLoaded', () => {
     // get story elements

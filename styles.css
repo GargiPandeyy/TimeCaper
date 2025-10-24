@@ -447,3 +447,27 @@ main {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
+/* animation container */
+#animation-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* vortex ring animation */
+.vortex-ring {
+    position: absolute;
+    border: 10px solid var(--glow);
+    border-radius: 50%;
+    width: 50px; height: 50px;
+    transform: translate(-50%, -50%);
+    animation: vortex-expand 1s ease-out forwards;
+}
+
+@keyframes vortex-expand {
+    from { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+    to { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}

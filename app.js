@@ -191,6 +191,56 @@ function activate_scanner(mission) {
     
     // add mouse move listener
     document.addEventListener('mousemove', on_mouse_move);
+    
+    // scene click handler
+    const on_scene_click = (e) => {
+        const scene_rect = scene_viewer.getBoundingClientRect();
+        const rel_x = ((e.clientX - scene_rect.left) / scene_rect.width) * 100;
+        const rel_y = ((e.clientY - scene_rect.top) / scene_rect.height) * 100;
+        const dist = Math.sqrt(Math.pow(rel_x - clue_x, 2) + Math.pow(rel_y - clue_y, 2));
+        
+        // check if clicked on artifact
+        if (dist < 5) {
+            play_sound('correct');
+            scanner.style.display = 'none';
+            
+            // remove event listeners
+            document.removeEventListener('mousemove', on_mouse_move);
+            scene_viewer.removeEventListener('click', on_scene_click);
+            
+            // show found message
+            update_companion('Anachronism found! Stabilizing timeline... Prepare for Temporal Lock.');
+            
+            // trigger vortex animation
+            trigger_vortex_animation(e.clientX, e.clientY);
+            
+            // load quiz after delay
+            setTimeout(() => {
+                load_quiz(mission.quizDataFile);
+            }, 1500);
+        }
+    };
+    
+    // add click listener to scene
+    scene_viewer.addEventListener('click', on_scene_click);
+}
+
+// trigger vortex animation
+function trigger_vortex_animation(x, y) {
+    play_sound('vortex');
+    const container = document.getElementById('animation-container');
+    
+    for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+            const ring = document.createElement('div');
+            ring.className = 'vortex-ring';
+            ring.style.left = `${x}px`;
+            ring.style.top = `${y}px`;
+            container.appendChild(ring);
+            
+            setTimeout(() => ring.remove(), 1000);
+        }, i * 150);
+    }
 }
 
 // initialize the game

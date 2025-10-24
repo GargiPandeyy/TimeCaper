@@ -1,8 +1,102 @@
-// Mission data structure
 [
   {
     "id": "ancient-egypt",
     "title": "Ancient Egypt",
-    "description": "Find the anachronism in ancient Egypt"
+    "description": "Agent, we've detected a high-energy anachronism: a modern smartphone... near the Great Pyramid. This is a Level 4 destabilization event. Find it and retrieve it!",
+    "image": "data/images/ancient-egypt-scene.png",
+    "artifactPosition": { "x": 72, "y": 65 },
+    "quizDataFile": "data/eras/ancient-egypt.json",
+    "artifactName": "Smartphone",
+    "artifactIcon": "📱"
+  },
+  {
+    "id": "renaissance",
+    "title": "Renaissance Italy",
+    "description": "This is a strange one. Our sensors are picking up... a pair of cheap sunglasses... inside a Florentine workshop. Retrieve them before someone invents 'art-pop'.",
+    "image": "data/images/renaissance-italy-scene.png",
+    "artifactPosition": { "x": 30, "y": 52 },
+    "quizDataFile": "data/eras/renaissance.json",
+    "artifactName": "Sunglasses",
+    "artifactIcon": "🕶️"
+  },
+  {
+    "id": "wild-west",
+    "title": "American Wild West",
+    "description": "We've got a... synthesizer keyboard... at a saloon in Tombstone. The local piano player is confused and angry. Secure the artifact before this turns into a synth-wave showdown.",
+    "image": "data/images/wild-west-scene.png",
+    "artifactPosition": { "x": 50, "y": 60 },
+    "quizDataFile": "data/eras/wild-west.json",
+    "artifactName": "Synthesizer",
+    "artifactIcon": "🎹"
+  },
+  {
+    "id": "feudal-japan",
+    "title": "Feudal Japan",
+    "description": "Agent, a temporal echo is originating from 1603 Japan. We're detecting a high-tech surveillance drone near Edo Castle. Secure it before it's reverse-engineered.",
+    "image": "data/images/feudal-japan-scene.png",
+    "artifactPosition": { "x": 60, "y": 35 },
+    "quizDataFile": "data/eras/feudal-japan.json",
+    "artifactName": "Surveillance Drone",
+    "artifactIcon": "🛸"
+  },
+  {
+    "id": "1920s-new-york",
+    "title": "Roaring Twenties NYC",
+    "description": "Sensors are going wild in 1925 New York. A civilian is reportedly 'seeing other worlds' on a street corner. It's a VR headset. Get it before it inspires a very strange sci-fi cult.",
+    "image": "data/images/1920s-new-york-scene.png",
+    "artifactPosition": { "x": 45, "y": 55 },
+    "quizDataFile": "data/eras/1920s-new-york.json",
+    "artifactName": "VR Headset",
+    "artifactIcon": "🕶️"
+  },
+  {
+    "id": "ancient-greece",
+    "title": "Ancient Greece",
+    "description": "Agent, we've detected a temporal anomaly in ancient Athens. A modern laptop has appeared in the Agora. The philosophers are calling it 'the thinking box of the gods.' Retrieve it before it disrupts the birth of democracy.",
+    "image": "data/images/ancient-greece-scene.png",
+    "artifactPosition": { "x": 55, "y": 40 },
+    "quizDataFile": "data/eras/ancient-greece.json",
+    "artifactName": "Laptop",
+    "artifactIcon": "💻"
+  },
+  {
+    "id": "colonial-america",
+    "title": "Colonial America",
+    "description": "Temporal sensors are detecting a modern GPS device in 1775 Boston. The Sons of Liberty think it's a British spy device. Secure it before it becomes evidence in the Boston Massacre trial.",
+    "image": "data/images/colonial-america-scene.png",
+    "artifactPosition": { "x": 40, "y": 50 },
+    "quizDataFile": "data/eras/colonial-america.json",
+    "artifactName": "GPS Device",
+    "artifactIcon": "📍"
+  },
+  {
+    "id": "industrial-revolution",
+    "title": "Industrial Revolution",
+    "description": "Agent, we've got a serious problem in 1850s Manchester. A modern smartphone has appeared in a textile factory. The workers think it's a new invention from the future. Get it before it inspires premature mobile technology.",
+    "image": "data/images/industrial-revolution-scene.png",
+    "artifactPosition": { "x": 65, "y": 45 },
+    "quizDataFile": "data/eras/industrial-revolution.json",
+    "artifactName": "Smartphone",
+    "artifactIcon": "📱"
+  },
+  {
+    "id": "medieval-europe",
+    "title": "Medieval Europe",
+    "description": "Temporal anomaly detected in 12th century France. A modern tablet has appeared in a monastery scriptorium. The monks believe it's a divine writing device. Retrieve it before it becomes a holy relic.",
+    "image": "data/images/medieval-europe-scene.png",
+    "artifactPosition": { "x": 50, "y": 35 },
+    "quizDataFile": "data/eras/medieval-europe.json",
+    "artifactName": "Tablet",
+    "artifactIcon": "📱"
+  },
+  {
+    "id": "viking-age",
+    "title": "Viking Age",
+    "description": "Agent, we've detected a modern drone in 9th century Scandinavia. The Vikings think it's Odin's raven Muninn. Secure it before they start worshipping it and change Norse mythology forever.",
+    "image": "data/images/viking-age-scene.png",
+    "artifactPosition": { "x": 60, "y": 30 },
+    "quizDataFile": "data/eras/viking-age.json",
+    "artifactName": "Drone",
+    "artifactIcon": "🛸"
   }
 ]

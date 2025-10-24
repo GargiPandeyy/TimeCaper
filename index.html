@@ -75,6 +75,23 @@
                 <p class="scan-instructions">Activate your scanner and find the anachronism!</p>
             </div>
             
+            <!-- quiz mode -->
+            <div id="quiz-mode" class="app-mode">
+                <div id="quizContainer" class="quiz-container terminal-effect">
+                    <div class="quiz-header">
+                        <h2 class="quiz-title-text">TIMELINE LOCK</h2>
+                        <p class="score">Security Layers: <span id="quizScore">0</span> / <span id="quizTotal">0</span></p>
+                    </div>
+                    <div id="quiz-question">
+                        <p class="question-text" id="questionText">Loading query...</p>
+                        <div class="quiz-options" id="quizOptions"></div>
+                    </div>
+                    <div class="quiz-nav">
+                        <button id="next-question" class="btn" style="display: none;">Next Layer →</button>
+                    </div>
+                </div>
+            </div>
+            
             <!-- trophy room mode -->
             <div id="trophy-room" class="app-mode">
                 <h2>Collected Anachronisms</h2>

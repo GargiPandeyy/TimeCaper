@@ -600,6 +600,9 @@ function create_matrix_effect() {
 
 // initialize the game
 document.addEventListener('DOMContentLoaded', () => {
+    // start matrix effect immediately for background
+    create_matrix_effect();
+    
     // get story elements
     const story_text = document.getElementById('story-text-1');
     const start_btn = document.getElementById('start-btn');
@@ -631,6 +634,5 @@ document.addEventListener('DOMContentLoaded', () => {
         setup_nav();
         setup_mute_button();
         create_flying_clocks();
-        create_matrix_effect();
     });
 });

@@ -53,6 +53,35 @@ function show_mode(mode) {
     mode.classList.add('active');
 }
 
+// setup navigation
+function setup_nav() {
+    // get nav buttons
+    const nav_hub = document.getElementById('nav-hub');
+    const nav_trophy = document.getElementById('nav-trophy');
+    
+    // get mode containers
+    const hub_mode = document.getElementById('main-hub');
+    const trophy_mode = document.getElementById('trophy-room');
+    
+    // hub button click
+    nav_hub.addEventListener('click', () => {
+        play_sound('click');
+        show_mode(hub_mode);
+        nav_hub.classList.add('active');
+        nav_trophy.classList.remove('active');
+        update_companion('Welcome, Agent. Select a mission from the Time Hub.');
+    });
+    
+    // trophy button click
+    nav_trophy.addEventListener('click', () => {
+        play_sound('click');
+        show_mode(trophy_mode);
+        nav_trophy.classList.add('active');
+        nav_hub.classList.remove('active');
+        update_companion('Viewing collected anachronisms.');
+    });
+}
+
 // initialize the game
 document.addEventListener('DOMContentLoaded', () => {
     // get story elements

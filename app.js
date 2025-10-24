@@ -490,6 +490,47 @@ function render_trophy_room() {
     });
 }
 
+// create flying clocks
+function create_flying_clocks() {
+    const container = document.getElementById('flying-clocks-container');
+    if (!container) return;
+    
+    const clock_emojis = ['🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗', '🕘', '🕙', '🕚', '🕛'];
+    
+    function create_single_clock() {
+        const clock = document.createElement('div');
+        clock.className = 'flying-clock';
+        clock.textContent = clock_emojis[Math.floor(Math.random() * clock_emojis.length)];
+        
+        const start_y = Math.random() * 70 + 15;
+        const duration = Math.random() * 8 + 22;
+        const scale = Math.random() * 0.3 + 0.7;
+        
+        clock.style.top = `${start_y}vh`;
+        clock.style.left = '0px';
+        clock.style.animationDuration = `${duration}s`;
+        clock.style.transform = `scale(${scale})`;
+        
+        container.appendChild(clock);
+        
+        setTimeout(() => {
+            if (clock.parentNode) {
+                clock.parentNode.removeChild(clock);
+            }
+        }, duration * 1000);
+    }
+    
+    // create initial clocks
+    for (let i = 0; i < 3; i++) {
+        setTimeout(() => create_single_clock(), i * 2000);
+    }
+    
+    // create clocks periodically
+    setInterval(() => {
+        create_single_clock();
+    }, Math.random() * 2000 + 4000);
+}
+
 // initialize the game
 document.addEventListener('DOMContentLoaded', () => {
     // get story elements
@@ -522,5 +563,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         setup_nav();
         setup_mute_button();
+        create_flying_clocks();
     });
 });

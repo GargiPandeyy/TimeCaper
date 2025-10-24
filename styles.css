@@ -262,3 +262,24 @@ main {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* companion robot styles */
+.companion {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+    background: var(--terminal-bg);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--terminal-border);
+}
+
+.companion-avatar { 
+    font-size: 3rem; 
+}
+
+.companion-bubble { 
+    font-size: 1.1em; 
+    line-height: 1.5; 
+}

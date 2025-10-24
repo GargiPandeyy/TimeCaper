@@ -1,9 +1,29 @@
-/* Responsive design */
-/* Terminal glow effects */
-/* Parallax background effects */
-/* TimeCaper CSS Styles */
+/* css variables for colors */
+:root {
+    --dark-bg: #001100;
+    --brass: #00ff00;
+    --parchment: #00ff00;
+    --glow: #00ff00;
+    --glow-secondary: #00cc00;
+    --text-dark: #001100;
+    --text-light: #00ff00;
+    --terminal-bg: rgba(0, 17, 0, 0.9);
+    --terminal-border: rgba(0, 255, 0, 0.6);
+}
+
+/* reset all styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* basic body styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #0f0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    overflow-y: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
 }

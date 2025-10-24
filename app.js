@@ -79,6 +79,7 @@ function setup_nav() {
         nav_trophy.classList.add('active');
         nav_hub.classList.remove('active');
         update_companion('Viewing collected anachronisms.');
+        render_trophy_room();
     });
 }
 
@@ -388,6 +389,26 @@ function finish_quiz() {
             const trophies = JSON.parse(localStorage.getItem('timeCaperTrophies')) || [];
             render_missions(missions, trophies);
         }
+    });
+}
+
+// render trophy room
+function render_trophy_room() {
+    const trophy_grid = document.getElementById('trophy-grid');
+    const trophies = JSON.parse(localStorage.getItem('timeCaperTrophies')) || [];
+    
+    trophy_grid.innerHTML = '';
+    
+    if (trophies.length === 0) {
+        trophy_grid.innerHTML = '<p>Trophy Room is empty. Secure anachronisms to fill it.</p>';
+        return;
+    }
+    
+    trophies.forEach(trophy => {
+        const card = document.createElement('div');
+        card.className = 'trophy-card';
+        card.innerHTML = `<h3>${trophy.icon}</h3><p>${trophy.name}</p>`;
+        trophy_grid.appendChild(card);
     });
 }
 

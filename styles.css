@@ -221,7 +221,7 @@ main {
 }
 
 /* button styles */
-.btn {
+.btn, .btn-nav {
     padding: 10px 20px;
     border-radius: 5px;
     border: 2px solid var(--brass);
@@ -233,11 +233,17 @@ main {
     transition: all 0.3s ease;
 }
 
-.btn:hover {
+.btn:hover, .btn-nav:hover {
     background-color: var(--brass);
     color: var(--text-dark);
     box-shadow: 0 0 15px var(--brass);
     transform: translateY(-2px);
+}
+
+.btn-nav.active {
+    background-color: var(--brass);
+    color: var(--text-dark);
+    box-shadow: 0 0 15px var(--brass);
 }
 
 /* app mode styles */

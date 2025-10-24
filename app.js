@@ -309,6 +309,68 @@ function display_question() {
     });
 }
 
+// select answer
+function select_answer(selected_option, correct_answer) {
+    play_sound('click');
+    
+    const next_btn = document.getElementById('next-question');
+    next_btn.style.display = 'block';
+    
+    // disable all buttons
+    const buttons = document.querySelectorAll('.quiz-option');
+    buttons.forEach(button => {
+        button.disabled = true;
+        if (button.textContent === correct_answer) {
+            button.classList.add('correct');
+        } else if (button.textContent === selected_option) {
+            button.classList.add('incorrect');
+        }
+    });
+    
+    // check if answer is correct
+    if (selected_option === correct_answer) {
+        window.quiz_score++;
+        const quiz_score = document.getElementById('quizScore');
+        quiz_score.textContent = window.quiz_score;
+        play_sound('correct');
+        update_companion('Correct. Security layer bypassed.');
+    } else {
+        play_sound('incorrect');
+        update_companion('Incorrect. Temporal field unstable... try the next layer.');
+    }
+    
+    // setup next button
+    next_btn.onclick = () => {
+        window.current_question++;
+        if (window.current_question < window.quiz_data.length) {
+            display_question();
+        } else {
+            finish_quiz();
+        }
+    };
+}
+
+// finish quiz
+function finish_quiz() {
+    const score_percentage = window.quiz_score / window.quiz_data.length;
+    
+    if (score_percentage >= 0.6) {
+        update_companion('Timeline stabilized! Anachronism secured. Returning to Hub.');
+        play_sound('vortex');
+        
+        // add trophy (will implement later)
+        // trophies.push({...});
+        // localStorage.setItem('timeCaperTrophies', JSON.stringify(trophies));
+    } else {
+        update_companion('Timeline lock failed! Anomaly remains. Returning to Time Hub.');
+        play_sound('incorrect');
+    }
+    
+    // return to hub
+    const hub_mode = document.getElementById('main-hub');
+    show_mode(hub_mode);
+}
+
 // initialize the game
 document.addEventListener('DOMContentLoaded', () => {
     // get story elements

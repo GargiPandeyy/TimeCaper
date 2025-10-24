@@ -1,31 +1,48 @@
-// Additional feature 48
-// Additional feature 47
-// Additional feature 46
-// Additional feature 45
-// Additional feature 44
-// Additional feature 43
-// Additional feature 42
-// Additional feature 41
-// Additional feature 40
-// Additional feature 39
-// Additional feature 38
-// Additional feature 37
-// Additional feature 36
-// Additional feature 35
-// Additional feature 34
-// Additional feature 33
-// Additional feature 32
-// Final cleanup and code comments
-// Mute button functionality
-// Vortex animation
-// Matrix rain effect
-// Flying clocks animation
-// Trophy room functionality
-// Quiz system implementation
-// Scanner functionality
-// Sound effects and audio
-// Enhanced UI and animations
-// TimeCaper Core JavaScript
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('TimeCaper loaded');
-});
+// simple typing effect function
+function type_effect(element, text, on_complete) {
+    let i = 0;
+    element.innerHTML = "";
+    
+    // create blinking cursor
+    const cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+    element.appendChild(cursor);
+
+    function typing() {
+        if (i < text.length) {
+            // add one character at a time
+            cursor.insertAdjacentHTML('beforebegin', text.charAt(i));
+            i++;
+            
+            // play click sound every 3 characters
+            if (i % 3 === 0) {
+                play_sound('click');
+            }
+            
+            // continue typing after short delay
+            setTimeout(typing, 30);
+        } else {
+            // remove cursor when done
+            cursor.remove();
+            if (on_complete) on_complete();
+        }
+    }
+    
+    typing();
+}
+
+// typing cursor animation
+.typing-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background: var(--glow);
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}

@@ -203,3 +203,19 @@ main {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.95; }
 }
+
+/* typing cursor animation */
+.typing-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background: var(--glow);
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}

@@ -129,7 +129,68 @@ function render_missions(missions, trophies) {
 function start_mission(mission) {
     play_sound('click');
     update_companion(mission.description);
-    // will add more mission logic later
+    
+    // show mission screen
+    const mission_screen = document.getElementById('mission-screen');
+    const mission_title = document.getElementById('mission-title');
+    const scene_viewer = document.getElementById('scene-viewer');
+    
+    mission_title.textContent = `Mission: ${mission.title}`;
+    scene_viewer.style.backgroundImage = `url(${mission.image})`;
+    
+    show_mode(mission_screen);
+    activate_scanner(mission);
+}
+
+// activate scanner for mission
+function activate_scanner(mission) {
+    const scanner = document.getElementById('scanner');
+    const scanner_readout = document.getElementById('scanner-readout');
+    const scene_viewer = document.getElementById('scene-viewer');
+    
+    scanner.style.display = 'block';
+    
+    // get artifact position
+    const clue_pos = mission.artifactPosition;
+    const clue_x = parseFloat(clue_pos.x);
+    const clue_y = parseFloat(clue_pos.y);
+    
+    // mouse move handler
+    const on_mouse_move = (e) => {
+        const scene_rect = scene_viewer.getBoundingClientRect();
+        const mouse_x = e.clientX;
+        const mouse_y = e.clientY;
+        
+        // move scanner to mouse position
+        scanner.style.left = `${mouse_x}px`;
+        scanner.style.top = `${mouse_y}px`;
+        
+        // check if mouse is over scene
+        if (mouse_x > scene_rect.left && mouse_x < scene_rect.right &&
+            mouse_y > scene_rect.top && mouse_y < scene_rect.bottom) {
+            
+            // calculate distance to artifact
+            const rel_x = ((mouse_x - scene_rect.left) / scene_rect.width) * 100;
+            const rel_y = ((mouse_y - scene_rect.top) / scene_rect.height) * 100;
+            const dist = Math.sqrt(Math.pow(rel_x - clue_x, 2) + Math.pow(rel_y - clue_y, 2));
+            const dist_meters = Math.round(dist * 10);
+            
+            scanner_readout.textContent = `Dist: ${dist_meters}m`;
+            
+            // play beep sounds based on distance
+            if (dist < 5) {
+                scanner_readout.textContent = `LOCKED`;
+                play_sound('beep-high');
+            } else if (dist < 20) {
+                play_sound('beep-low');
+            }
+        } else {
+            scanner_readout.textContent = `NO SIGNAL`;
+        }
+    };
+    
+    // add mouse move listener
+    document.addEventListener('mousemove', on_mouse_move);
 }
 
 // initialize the game

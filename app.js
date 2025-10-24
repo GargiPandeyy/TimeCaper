@@ -600,8 +600,14 @@ function create_matrix_effect() {
 
 // initialize the game
 document.addEventListener('DOMContentLoaded', () => {
+    // initialize audio context immediately
+    init_audio();
+    
     // start matrix effect immediately for background
     create_matrix_effect();
+    
+    // setup mute button early
+    setup_mute_button();
     
     // get story elements
     const story_text = document.getElementById('story-text-1');
@@ -632,7 +638,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         setup_nav();
-        setup_mute_button();
         create_flying_clocks();
     });
 });

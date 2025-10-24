@@ -88,6 +88,20 @@ function update_companion(text) {
     companion_bubble.textContent = text;
 }
 
+// load missions from json file
+async function load_missions() {
+    try {
+        const response = await fetch('data/missions.json');
+        if (!response.ok) throw new Error('failed to load missions');
+        const missions = await response.json();
+        return missions;
+    } catch (error) {
+        console.error('error loading missions:', error);
+        update_companion('error: could not load mission data');
+        return null;
+    }
+}
+
 // initialize the game
 document.addEventListener('DOMContentLoaded', () => {
     // get story elements

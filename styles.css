@@ -283,3 +283,78 @@ main {
     font-size: 1.1em; 
     line-height: 1.5; 
 }
+
+/* terminal wrapper */
+.terminal-wrapper {
+    background: var(--terminal-bg);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--terminal-border);
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* headings */
+#main-hub h2, #trophy-room h2 {
+    color: var(--glow);
+    font-size: 2em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--terminal-border);
+    text-align: center;
+}
+
+/* mission grid */
+#mission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+/* mission cards */
+.mission-card {
+    background: rgba(0, 17, 0, 0.9);
+    color: var(--text-light);
+    border-radius: 10px;
+    border: 4px solid var(--brass);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mission-card:hover {
+    box-shadow: 0 0 25px var(--glow);
+    transform: translateY(-5px);
+}
+
+.mission-card h3 { 
+    font-size: 1.5em; 
+    margin-bottom: 10px; 
+    color: var(--text-light); 
+}
+
+.mission-card p { 
+    font-size: 1em; 
+}
+
+.mission-card.completed {
+    background: rgba(0, 100, 0, 0.6);
+    border-color: #00cc00;
+    cursor: not-allowed;
+    opacity: 0.6;
+}

@@ -24,3 +24,6 @@ A time-travel educational game where you play as an agent of the Time Variance S
 - JavaScript (ES6+)
 - Web Audio API
 - Local Storage
+
+I made this with a lot of struggle but loved doing it and learning all the things while building it.
+
